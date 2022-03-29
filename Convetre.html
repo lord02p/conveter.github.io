@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cnnverter</title>
+   <style>
+       *{
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    width: 100vw;
+    height: 100vh;
+    background-color: #004242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hero .logo{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.hero .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+.hero .container .textarea{
+   width: 32vw;
+   height: 31vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgba(253, 253, 253, 0.159);
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    color: white;
+    /* display: block; */
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+
+}
+ .btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2%;
+    cursor: pointer;
+}
+.btn{
+    width: 12.9vw;
+    background-color: rgba(253, 253, 253, 0.159);
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5vw;
+    height: 2.5rem;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.btn:hover{
+    box-shadow: 0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159);
+    /* border: 1.6px solid #00f58299; */
+}
+.hero .container .textarea:hover{
+    border: 1.6px solid #00f58299;
+}
+
+@media screen and (max-width:588px) {
+    .hero .container{
+        flex-direction: column;
+    }
+    .hero .container .textarea
+    {
+        width: 72vw;
+        height: 28vh;
+    }
+    .btn{
+        width: 14.9vw;
+background-color: rgba(253, 253, 253, 0.159);
+border: 1px solid white;
+color: white;
+font-size: 1.9vw;
+height: 2.5rem;
+    }
+}
+
+@media screen and (max-width:387px) {
+    .hero .container .textarea
+    {
+        width: 72vw;
+        height: 22vh;
+        font-size: 1rem;
+    }
+    .btns{
+        gap: 0.2rem;
+    }
+    .btn{
+        width: 18vw;
+        background-color: rgba(253, 253, 253, 0.159);
+        border: 1px solid white;
+        color: white;
+        font-size: 2vw;
+        height: 2rem;
+    }
+}
+@media screen and (max-width:244px) {
+    .hero .container .textarea{
+        width: 72vw;
+        height: 16vh;
+        font-size: 0.8rem;
+    }
+    .btns{
+        display: inline;
+        margin-top: 2%;
+        margin-left: 2%;
+    }
+    .btn{
+        width: 30vw;
+        font-size: 3vw;
+        height: 2rem;
+        margin-top: 1.5%;
+
+    }
+}
+   </style>
+</head>
+<body>
+    <main class="hero">
+        <h1 class="logo">Conveter</h1>
+        <section class="container">
+            <textarea  id="textarea" name="" placeholder="Please select and type your text / number" class="textarea" cols="30" rows="10"></textarea>
+            <textarea class="textarea" id="result" placeholder="Convert Result"></textarea>
+        </section>
+        <div class="btns">
+            <button id="nTOt" class="btn">Number to Text</button>
+            <button id="tTOn" class="btn">Text to Number</button>
+            <button id="copyText" class="btn">Copy Text</button>
+            <button id="Uppercase" class="btn">Uppercase</button>
+            <button id="Capitalize" class="btn">Capitalize</button>
+        </div>
+    </main>
+    <script>
+        let textarea = document.getElementById('textarea');
+let result  = document.getElementById('result');
+let nTOt = document.getElementById('nTOt');
+let tTOn = document.getElementById('tTOn');
+let btnresult = document.getElementById('btnresult');
+let copyText = document.querySelector('#copyText');
+let Uppercase = document.querySelector('#Uppercase');
+let Capitalize = document.querySelector('#Capitalize');
+
+  // =============================== nTOt eventlistner ====================================
+tTOn.addEventListener('click',()=>{
+  tTOn.style.boxShadow = "0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159)";
+  nTOt.style.boxShadow = 'none';
+    textarea.focus();
+    textarea.addEventListener('keyup',()=>{
+      result.value = textarea.value;
+      result.value = result.value.replaceAll('a','1');
+      result.value = result.value.replaceAll('b','2');
+      result.value = result.value.replaceAll('c','3');
+      result.value = result.value.replaceAll('d','4');
+      result.value = result.value.replaceAll('e','5');
+      result.value = result.value.replaceAll('f','6');
+      result.value = result.value.replaceAll('g','7');
+      result.value = result.value.replaceAll('h','8');
+      result.value = result.value.replaceAll('i','9');
+      result.value = result.value.replaceAll('j','10');
+      result.value = result.value.replaceAll('k','11');
+      result.value = result.value.replaceAll('l','12');
+      result.value = result.value.replaceAll('m','13');
+      result.value = result.value.replaceAll('n','14');
+      result.value = result.value.replaceAll('o','15');
+      result.value = result.value.replaceAll('p','16');
+      result.value = result.value.replaceAll('q','17');
+      result.value = result.value.replaceAll('r','18');
+      result.value = result.value.replaceAll('s','19');
+      result.value = result.value.replaceAll('t','20');
+      result.value = result.value.replaceAll('u','21');
+      result.value = result.value.replaceAll('v','22');
+      result.value = result.value.replaceAll('w','23');
+      result.value = result.value.replaceAll('x','24');
+      result.value = result.value.replaceAll('y','25');
+      result.value = result.value.replaceAll('z','26');
+      result.value = result.value.replaceAll('A','1');
+      result.value = result.value.replaceAll('B','2');
+      result.value = result.value.replaceAll('C','3');
+      result.value = result.value.replaceAll('D','4');
+      result.value = result.value.replaceAll('E','5');
+      result.value = result.value.replaceAll('F','6');
+      result.value = result.value.replaceAll('G','7');
+      result.value = result.value.replaceAll('H','8');
+      result.value = result.value.replaceAll('I','9');
+      result.value = result.value.replaceAll('J','10');
+      result.value = result.value.replaceAll('K','11');
+      result.value = result.value.replaceAll('L','12');
+      result.value = result.value.replaceAll('M','13');
+      result.value = result.value.replaceAll('N','14');
+      result.value = result.value.replaceAll('O','15');
+      result.value = result.value.replaceAll('P','16');
+      result.value = result.value.replaceAll('Q','17');
+      result.value = result.value.replaceAll('R','18');
+      result.value = result.value.replaceAll('S','19');
+      result.value = result.value.replaceAll('T','20');
+      result.value = result.value.replaceAll('U','21');
+      result.value = result.value.replaceAll('V','22');
+      result.value = result.value.replaceAll('W','23');
+      result.value = result.value.replaceAll('X','24');
+      result.value = result.value.replaceAll('Y','25');
+      result.value = result.value.replaceAll('Z','26');
+    })
+ });
+
+ nTOt.addEventListener('click',()=>{
+  nTOt.style.boxShadow = "0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159)";
+  tTOn.style.boxShadow = 'none';
+  textarea.focus();
+  textarea.addEventListener('keyup',()=>{
+    result.value = textarea.value;
+    result.value = result.value.replaceAll('10','j');
+    result.value = result.value.replaceAll('11','k');
+    result.value = result.value.replaceAll('12','l');
+    result.value = result.value.replaceAll('13','m');
+    result.value = result.value.replaceAll('14','n');
+    result.value = result.value.replaceAll('15','o');
+    result.value = result.value.replaceAll('16','p');
+    result.value = result.value.replaceAll('17','q');
+    result.value = result.value.replaceAll('18','r');
+    result.value = result.value.replaceAll('19','s');
+    result.value = result.value.replaceAll('20','t');
+    result.value = result.value.replaceAll('21','u');
+    result.value = result.value.replaceAll('22','v');
+    result.value = result.value.replaceAll('23','w');
+    result.value = result.value.replaceAll('24','x');
+    result.value = result.value.replaceAll('25','y');
+    result.value = result.value.replaceAll('26','z');
+    result.value = result.value.replaceAll('1','a');
+    result.value = result.value.replaceAll('2','b');
+    result.value = result.value.replaceAll('3','c');
+    result.value = result.value.replaceAll('4','d');
+    result.value = result.value.replaceAll('5','e');
+    result.value = result.value.replaceAll('6','f');
+    result.value = result.value.replaceAll('7','g');
+    result.value = result.value.replaceAll('8','h');
+    result.value = result.value.replaceAll('9','i');
+ 
+  })
+ })
+ Uppercase.addEventListener('click',()=>{
+  Uppercase.style.boxShadow = "0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159)";
+  Capitalize.style.boxShadow = 'none';
+  copyText.style.boxShadow = 'none';
+ result.style.textTransform = 'uppercase';
+ })
+ Capitalize.addEventListener('click',()=>{
+  Capitalize.style.boxShadow = "0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159)";
+  Uppercase.style.boxShadow = 'none';
+  copyText.style.boxShadow = 'none';
+ result.style.textTransform = 'capitalize';
+ 
+ })
+ 
+ copyText.addEventListener('click',function(event) {
+   event.preventDefault();
+   result.select();
+   document.execCommand("copy");
+  copyText.style.boxShadow = "0 1.5rem 2rem 0 rgba(253, 253, 253, 0.159)";
+  Uppercase.style.boxShadow = 'none';
+  Capitalize.style.boxShadow = 'none';
+
+
+ 
+ })
+    </script>
+</body>
+</html>
